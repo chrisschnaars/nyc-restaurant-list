@@ -1,0 +1,226 @@
+$animation-speed-base: 0.2s;
+$border-radius: 0.25rem;
+$color-blue-primary: #0050b9;
+$color-blue-dark: #003c8a;
+$color-white: #fff;
+$color-lightest-gray: #e0e5eb;
+$color-shadow-color: rgba(0, 16, 36, 0.15);
+$color-peach: #fd998c;
+$font-size-16: 1rem;
+$font-size-20: 1.25rem;
+$font-size-24: 1.5rem;
+$font-size-72: 4.5rem;
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $color-blue-primary;
+  color: $color-white;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.65px;
+  margin: 0;
+  padding: 0;
+}
+
+.site {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/*
+  FILTER BAR
+*/
+.filter-bar {
+  border-right: 2px solid $color-white;
+  max-width: 420px;
+  padding: 2rem;
+  width: 100%;
+}
+
+.filter-bar__header {
+  font-size: $font-size-24;
+  line-height: 1.33333;
+  margin-bottom: 3rem;
+}
+
+/*
+  FILTER GROUP
+*/
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.filter-group__header {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.filter-group__filters {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.filter-group__filter-btn {
+  background-color: $color-blue-primary;
+  border: 2px solid $color-white;
+  border-radius: 0.5rem;
+  color: $color-white;
+  font-family: inherit;
+  font-size: $font-size-16;
+  line-height: 1;
+  margin: 0 0.75rem 1rem 0;
+  padding: 1rem 1.5rem;
+  // transition: background-color $animation-speed-base ease;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.85;
+  }
+}
+
+.filter-group__filter-btn--active {
+  background-color: $color-blue-dark;
+}
+
+/*
+  RESTAURANT LIST
+*/
+.restaurant-list {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 2rem 2rem 2rem 2rem;
+  width: 100%;
+}
+
+.restaurant-list__header {
+  font-size: $font-size-24;
+  line-height: 1.33333;
+  margin: 0 0 3rem 2rem;
+}
+
+.restaurant-list__list {
+  margin-bottom: 3rem;
+}
+
+/*
+  RESTAURANT LIST ITEM
+*/
+.restaurant-list__item {
+  animation: 0.5s backwards slideIn;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  padding: 2rem;
+  position: relative;
+  transition: all 0.45s ease;
+}
+
+.restaurant-list__item:hover,
+.restaurant-list__item--active {
+  background-color: $color-blue-dark;
+  box-shadow: 2px 0 8px $color-shadow-color;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.restaurant-list__item-name {
+  font-size: $font-size-72;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+}
+
+.restaurant-list__item-meta-container {
+  display: flex;
+}
+
+.restaurant-list__item-meta {
+  font-family: monospace;
+  font-size: $font-size-20;
+  margin-right: 2rem;
+}
+
+.restaurant-list__item-details-container {
+  display: none;
+  margin-top: 3rem;
+  max-width: 900px;
+  transform: scaleY(0);
+}
+
+.restaurant-list__item-details-container--active {
+  display: block;
+  transform: scaleY(1);
+}
+
+.restaurant-list__item-details-header,
+.restaurant-list__item-details-content {
+  font-size: $font-size-24;
+  line-height: 1.5;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*
+  PAGINATION
+*/
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.pagination__btn {
+  background-color: $color-blue-dark;
+  border: none;
+  border-radius: $border-radius;
+  box-shadow: 2px 0 8px $color-shadow-color;
+  color: $color-white;
+  font-family: inherit;
+  font-size: $font-size-20;
+  font-weight: 600;
+  padding: 1rem 1.5rem;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+  }
+}
