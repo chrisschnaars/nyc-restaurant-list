@@ -56,7 +56,7 @@ body {
 .filter-bar {
   border-right: 2px solid $color-white;
   max-width: 420px;
-  padding: 2rem;
+  padding: 2rem 1.5rem;
   width: 100%;
 }
 
@@ -94,7 +94,7 @@ body {
   font-size: $font-size-16;
   line-height: 1;
   margin: 0 0.75rem 1rem 0;
-  padding: 1rem 1.5rem;
+  padding: 0.75rem 1rem;
   // transition: background-color $animation-speed-base ease;
 
   &:hover {
