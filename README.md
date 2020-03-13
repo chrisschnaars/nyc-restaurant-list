@@ -4,3 +4,4 @@ This is a small and somewhat useless app that loads NYC restaurants and their De
 
 - the dynamic loading and filtering of large data sets
 - passing state and props between multiple child components
+- build and deployment
